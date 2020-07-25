@@ -2,20 +2,7 @@
 Module Name:  
 Project:      -
 Author:       Pavel Andreev
-Copyright (c) Commtact.
-Date: 
-Description:
-Revision: 1.0
-Open issues:
 
-
-
-This source is subject to the Commtact Costumer License.
-All other rights reserved.
-
-THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 \***************************************************************************/
 using System;
 using System.Collections.Generic;
