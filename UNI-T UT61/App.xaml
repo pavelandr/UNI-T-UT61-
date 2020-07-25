@@ -1,0 +1,9 @@
+﻿<Application x:Class="UNI_T_UT61.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UNI_T_UT61.ViewModel"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <local:MainVM x:Key="vm"/>
+    </Application.Resources>
+</Application>

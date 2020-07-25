@@ -1,0 +1,70 @@
+﻿<Window x:Class="UNI_T_UT61.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UNI_T_UT61"
+        xmlns:uc="clr-namespace:UNI_T_UT61.View.Controls"
+        xmlns:Converters ="clr-namespace:UNI_T_UT61.View.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="400"
+        DataContext="{StaticResource vm}">
+
+
+
+    <Window.Resources>
+        <Converters:Unit7SymbolVisibilityByteConverter x:Key="unit7SymbolVisibilityByteConverter"/>
+        <Converters:Unit8SymbolVisibilityByteConverter x:Key="unit8SymbolVisibilityByteConverter"/>
+        <Converters:UnitSymbolVisibilityByteConverter x:Key="unitSymbolVisibilityByteConverter"/>
+        <Converters:UnitExponentSymbolVisibilityByteConverter x:Key="unitExponentSymbolVisibilityByteConverter"/>
+
+        
+    </Window.Resources>
+    <DockPanel>
+        <Menu IsMainMenu="True" Name="mainMenu" DockPanel.Dock="Top">
+            <MenuItem Header="Connection Settings"
+                      Command="{Binding OpenConnectionSettingsWindow}">
+
+            </MenuItem>
+        </Menu>
+        <Grid Margin="5">
+            <Grid.Background>
+                <ImageBrush ImageSource="UT61.png"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <uc:DisplayControl Grid.Column="0" Grid.Row="0"
+                               
+                               Value="{Binding Reading, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                               DC="{Binding Unit7SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit7SymbolVisibilityByteConverter} , ConverterParameter=DC}"
+                               AC="{Binding Unit7SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit7SymbolVisibilityByteConverter} , ConverterParameter=AC}"
+                               REL="{Binding Unit7SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit7SymbolVisibilityByteConverter} , ConverterParameter=REL}"
+                               HOLD="{Binding Unit7SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit7SymbolVisibilityByteConverter} , ConverterParameter=HOLD}"
+                               MAX="{Binding Unit8SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit8SymbolVisibilityByteConverter} , ConverterParameter=MAX}"
+                               MIN="{Binding Unit8SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit8SymbolVisibilityByteConverter} , ConverterParameter=MIN}"
+                               Beeps="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Beeps}"
+                               Diode="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Diode}"
+                               Nano="{Binding Unit8SymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unit8SymbolVisibilityByteConverter} , ConverterParameter=n}"
+                               Mili="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Mili}"
+                               Micro="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Micro}"
+                               Volt="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Volt}"
+                               Amper="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Amper}"
+                               Farad="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Farad}"
+                               Celsius="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Celsius}"
+                               Fahrenheit="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Fahrenheit}"
+                               Precent="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Precent}"
+                               Hz="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Hz}"
+                               Ohm="{Binding UnitSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitSymbolVisibilityByteConverter} , ConverterParameter=Ohm}"
+                               Mega="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Mega}"
+                               Kilo="{Binding UnitExponenetSymbolVisibilityByte, Mode=OneWay, UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource unitExponentSymbolVisibilityByteConverter} , ConverterParameter=Kilo}" Margin="63,79,62,146"/>
+
+        </Grid>
+    </DockPanel>
+
+
+</Window>
